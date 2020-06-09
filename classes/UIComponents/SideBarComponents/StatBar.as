@@ -21,33 +21,33 @@ package classes.UIComponents.SideBarComponents
 		public static const MODE_SMALL:String = "SMALL";
 		public static const MODE_NOBAR:String = "NOBAR";
 		
-		private var _desiredMode:String;
+		protected var _desiredMode:String;
 		
 		public var highBad:Boolean = false;
 		
-		private var _values:TextField;
-		private var _capBack:TextField;
-		private var _capFront:TextField;
+		protected var _values:TextField;
+		protected var _capBack:TextField;
+		protected var _capFront:TextField;
 		
-		private var _progressBar:Sprite;
-		private var _maskingBar:Sprite;
-		private var _progressColor:ColorTransform;
+		protected var _progressBar:Sprite;
+		protected var _maskingBar:Sprite;
+		protected var _progressColor:ColorTransform;
 		
-		private var _tMin:Number = 0;
-		private var _tMax:Number = 100;
-		private var _tCurrent:Number = 0;
-		private var _tGoal:Number = 0;
-		private var _strMode:Boolean = false;
-		private var _directValue:Boolean = false;
+		protected var _tMin:Number = 0;
+		protected var _tMax:Number = 100;
+		protected var _tCurrent:Number = 0;
+		protected var _tGoal:Number = 0;
+		protected var _strMode:Boolean = false;
+		protected var _directValue:Boolean = false;
 		
-		private var _valueMaxChangeDisplay:Number = Number.NaN;
-		private var _valueChangePerTick:Number = Number.NaN;
+		protected var _valueMaxChangeDisplay:Number = Number.NaN;
+		protected var _valueChangePerTick:Number = Number.NaN;
 		
-		private var _barFrames:Number = 1.0 / (2.0 * 24);
-		private var _glowFrames:Number = 1.0 / (4.0 * 24);
-		private var _valueGlow:GlowFilter;
+		protected var _barFrames:Number = 1.0 / (2.0 * 24);
+		protected var _glowFrames:Number = 1.0 / (4.0 * 24);
+		protected var _valueGlow:GlowFilter;
 		
-		private var _tickGlow:Boolean = false;
+		protected var _tickGlow:Boolean = false;
 		
 		public function set caption(v:String):void
 		{
@@ -94,7 +94,7 @@ package classes.UIComponents.SideBarComponents
 			Build();
 		}
 		
-		private function update(e:Event):void
+		protected function update(e:Event):void
 		{
 			if (visible == false) return;
 			
@@ -186,7 +186,7 @@ package classes.UIComponents.SideBarComponents
 			}
 		}
 		
-		private function updateColor(scaleValue:Number):void
+		protected function updateColor(scaleValue:Number):void
 		{
 			var badColor:uint = 0xFF0000;
 			var goodColor:uint = 0x8D31B0;
