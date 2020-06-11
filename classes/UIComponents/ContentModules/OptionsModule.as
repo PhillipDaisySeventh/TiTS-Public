@@ -83,6 +83,8 @@ package classes.UIComponents.ContentModules
 			
 			addMultiToggleControl("Basic character image settings.", "Busts", "bustsEnabled", "Fallback", "bustFallbacks");
 			
+			addMultiToggleControl("Change the clearness of the interface.", "Fuzzy UI", "fuzzyInterface", null, null);
+
 			var bustControl:DoubleSelectControl = new DoubleSelectControl();
 			_controls.push(bustControl);
 			_controlsContainer.addChild(bustControl);

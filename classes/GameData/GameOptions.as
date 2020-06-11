@@ -29,6 +29,7 @@ package classes.GameData
 			tempHideRoomAndSceneNames = false;
 			seasonalOverridePreferences = { };
 			samePageLog = false;
+			fuzzyInterface = false;
 		}
 		
 		public var primaryBustArtist:String = "SHOU";
@@ -77,6 +78,9 @@ package classes.GameData
 		public var overwriteToggle:Boolean;
 		public var authorToggle:Boolean;
 		public var vendorToggle:Boolean;
+
+		// Make the informations in the interface a bit less accurate
+		public var fuzzyInterface:Boolean;
 	}
 
 }
