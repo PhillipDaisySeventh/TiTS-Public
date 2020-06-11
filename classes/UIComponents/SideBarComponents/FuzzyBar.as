@@ -2,6 +2,7 @@ package classes.UIComponents.SideBarComponents
 {
 
   import flash.events.Event;
+  import classes.kGAMECLASS;
   import classes.Engine.Utility.MathUtil;
 
   public class FuzzyBar extends StatBar {
@@ -13,7 +14,7 @@ package classes.UIComponents.SideBarComponents
     }
 
     override public function set value(v:*):void {
-      super.value = "";
+      super.value = kGAMECLASS.gameOptions.fuzzyInterface ? "" : v;
     }
 
     override public function resetBar():void {
@@ -22,6 +23,14 @@ package classes.UIComponents.SideBarComponents
     }
 
     override protected function update(e:Event):void {
+      if (!kGAMECLASS.gameOptions.fuzzyInterface) {
+        super.update(e);
+      } else {
+        fuzzyUpdate(e);
+      }
+    }
+
+    private function fuzzyUpdate(e:Event):void {
       if (visible == false) return;
 
       if (_valueGlow.alpha > 0 && _tickGlow) {
@@ -48,6 +57,8 @@ package classes.UIComponents.SideBarComponents
           _cGoal = _tGoal;
         }
       }
+
+      if (_desiredMode != StatBar.MODE_NOBAR) super.value = "";
 
       if (_desiredMode == StatBar.MODE_BIG) {
         _maskingBar.scaleX = _progressBar.scaleX = isNaN(cScale) ? 0 : 1;
