@@ -98,7 +98,7 @@ package classes.UIComponents.SideBarComponents
 		 */
 		private function barFactory(masksText:String, valueText:String, prevBarY:int = 0, inverse:Boolean = false):StatBar
 		{
-			var bar:StatBar = new StatBar(StatBar.MODE_BIG);
+			var bar:StatBar = new FuzzyBar(StatBar.MODE_BIG);
 			
 			if (inverse)
 			{
