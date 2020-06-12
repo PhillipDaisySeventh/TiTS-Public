@@ -33,6 +33,7 @@
 	import classes.Util.*;
 	import classes.Engine.Combat.DamageTypes.*;
 	import classes.Engine.Combat.inCombat;
+	import classes.Engine.Combat.fuzzDamage;
 	import classes.GameData.CodexManager;
 	import classes.Engine.Interfaces.*;
 
@@ -5110,7 +5111,7 @@
 			if(outputText)
 			{
 				var healTxt:String = " (<b>";
-				healTxt += "HP: " + (arg > 0 ? "+<span class='hpHeal'>" : "<span class='hp'>") + Math.round(arg) + "</span></b>)";
+				healTxt += "HP: " + (arg > 0 ? (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='hpHeal'>" : "<span class='hp'>") + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(arg) : Math.round(arg)) + "</span></b>)";
 				kGAMECLASS.output(healTxt);
 			}
 			this.HP(arg);
@@ -5155,7 +5156,7 @@
 			if(outputText)
 			{
 				var healTxt:String = " (<b>";
-				healTxt += "E: " + (arg > 0 ? "+<span class='energyHeal'>" : "<span class='energy'>") + Math.round(arg) + "</span></b>)";
+				healTxt += "E: " + (arg > 0 ? (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='energyHeal'>" : "<span class='energy'>") + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(arg) : Math.round(arg)) + "</span></b>)";
 				kGAMECLASS.output(healTxt);
 			}
 			this.energy(arg);
@@ -5238,7 +5239,7 @@
 			if(outputText && arg != 0)
 			{
 				var healTxt:String = " (<b>";
-				healTxt += "L: " + (arg > 0 ? "+<span class='lust'>" : "<span class='lustHeal'>") + Math.round(arg) + "</span></b>)";
+				healTxt += "L: " + (arg > 0 ? (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" : "<span class='lustHeal'>") + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(arg) : Math.round(arg)) + "</span></b>)";
 				kGAMECLASS.output(healTxt);
 			}
 			this.lust(arg);
@@ -5260,7 +5261,7 @@
 				if(oldLust != 0)
 				{
 					var healTxt:String = " (<b>";
-					healTxt += "L: " + (arg > 0 ? "+<span class='lust'>" : "<span class='lustHeal'>") + Math.round(oldLust) + "</span></b>)";
+					healTxt += "L: " + (arg > 0 ? (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" : "<span class='lustHeal'>") + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(oldLust) : Math.round(oldLust)) + "</span></b>)";
 					kGAMECLASS.output(healTxt);
 				}
 			}
@@ -6165,7 +6166,7 @@
 			if(outputText)
 			{
 				var healTxt:String = " (<b>";
-				healTxt += "S: " + (arg > 0 ? "+<span class='shieldHeal'>" : "<span class='shield'>") + Math.round(arg) + "</span></b>)";
+				healTxt += "S: " + (arg > 0 ? (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='shieldHeal'>" : "<span class='shield'>") + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(arg) : Math.round(arg)) + "</span></b>)";
 				kGAMECLASS.output(healTxt);
 			}
 			shields(arg);

@@ -236,7 +236,7 @@
 			//Transition to phase 2
 			output("The war-alpha shudders, then rears back and pistons his hips forward. A faint buzzing sound blossoms into the tearing of violently splitting fabric. A very bare, glossy cock appears. The war alpha-stares at you like a tiger eyeing a juicy morsel while his member bounces in excitement. His lip peels back into a slight snarl. <i>“New plan. I fuck you and make the princess watch.”</i>");
 			output("\n\nHe advances once more, swaggering with an overflowing wellspring of sexual intent when he should be disabled by desire. <b>It’ll take so much more than this to break the war-lion’s resolve!</b>");
-			output(" (<b>Max L: +<span class='lust'>" + 100 + "</span></b>)");
+			output(" (<b>Max L: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(100) : "100") + "</span></b>)");
 			this.removeStatusEffect("Not Busted");
 			this.baseHPResistances = new TypeCollection();
 			this.baseHPResistances.tease.damageValue = -33.0;

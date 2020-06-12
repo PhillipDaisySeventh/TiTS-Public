@@ -17,6 +17,7 @@
 	import classes.GameData.CombatManager;
 	import classes.Engine.Combat.damageRand;
 	import classes.Engine.Combat.outputDamage;
+	import classes.Engine.Combat.fuzzDamage;
 	import classes.Engine.Combat.DamageTypes.DamageResult;
 	import classes.Characters.PlayerCharacter;
 	import classes.Engine.Utility.rand;
@@ -107,8 +108,8 @@
 					targetCreature.energy(-capStolen);
 					usingCreature.energy(capStolen);
 
-					output(" (<b>E:</b> -<b><span class='hp'>" + capStolen + "</span></b>).");
-					output(" (<b>E:</b> +<b><span class='hp'>" + capStolen + "</span></b>).");
+					output(" (<b>E:</b> " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "-") + "<b><span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(capStolen) : capStolen) + "</span></b>).");
+					output(" (<b>E:</b> " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<b><span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(capStolen) : capStolen) + "</span></b>).");
 				}
 				//Fail!
 				else

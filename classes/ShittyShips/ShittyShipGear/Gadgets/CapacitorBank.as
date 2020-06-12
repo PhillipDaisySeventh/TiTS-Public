@@ -17,6 +17,7 @@
 	import classes.GameData.CombatManager;
 	import classes.Engine.Combat.damageRand;
 	import classes.Engine.Combat.outputDamage;
+	import classes.Engine.Combat.fuzzDamage;
 	import classes.Engine.Combat.DamageTypes.DamageResult;
 	import classes.Characters.PlayerCharacter;
 	import classes.Engine.Utility.rand;
@@ -101,7 +102,7 @@
 				{
 					output("A warning chirp alerts you that " + (usingCreature.getCombatName()) + " has tapped into a reserve energy store.");
 				}
-				output(" (<b>E:</b> +<b><span class='shield'>" + healing + "</span></b>)");
+				output(" (<b>E:</b> " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<b><span class='shield'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(healing) : healing) + "</span></b>)");
 			}
 			return false;
 		}

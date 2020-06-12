@@ -100,7 +100,7 @@ package classes.Engine.Combat
 				else output(" resists");
 				output(" your erotically charged display... this time.");
 			}
-			output(" (<b>L: +<span class='lust'>0</span></b>)");
+			output(" (<b>L: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(0) : "0") + "</span></b>)");
 		}
 		// Success
 		else

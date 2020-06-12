@@ -99,7 +99,7 @@
 				{
 					output("Swarms of spider-like repair bots scuttle across the surface of " + (usingCreature.getCombatName()) + ", patching damage.");
 				}
-				//output(" (<b>H:</b> +<b><span class='hp'>" + healing + "</span></b>)");
+				//output(" (<b>H:</b> " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<b><span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(healing) : healing) + "</span></b>)");
 				usingCreature.changeHP(healing);
 			}
 			return false;

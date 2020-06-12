@@ -103,7 +103,7 @@
 					if (dr.shieldDamage > 0) 
 					{
 						var shieldHeal:Number = Math.ceil(dr.shieldDamage);
-						//output(" (<b>S:</b> +<b><span class='shield'>" + shieldHeal + "</span></b>)");
+						//output(" (<b>S:</b> " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<b><span class='shield'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(shieldHeal) : shieldHeal) + "</span></b>)");
 						usingCreature.changeShields(shieldHeal);
 					}
 				}

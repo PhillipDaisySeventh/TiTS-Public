@@ -2221,7 +2221,7 @@ public function ratFightLoss():void
 		output("\n\nWhen they open up the first of your packs, they scoff. They undo everything else helter-skelter, desperate to find even one chit. Their expectations leave them befuddled as they slowly but surely realize you’re carrying nothing of value. Everything on your person is ripped open, this or that tossed to the ground in disgust. The figurative moth flies from your empty wallet, and their curses turn to whines and petulant fits.");
 		output("\n\nAll because they can find nothing worth taking.");
 		output("\n\nWith frustrated growls, they shove you on your back.");
-		if (pc.HP() <= 0) output(" The rodenian jabs you in the neck with a hypostim of some sort. Arousal courses through your veins, turning your face red, but also knitting the wounds you accrued during the fight. (<b>H: +<span class='hp'>" + heal + "</span></b>)" + (lust > 0 ? " (<b>L: +<span class='lust'>" + lust + "</span></b>)" : ""));
+		if (pc.HP() <= 0) output(" The rodenian jabs you in the neck with a hypostim of some sort. Arousal courses through your veins, turning your face red, but also knitting the wounds you accrued during the fight. (<b>H: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(heal) : heal) + "</span></b>)" + (lust > 0 ? " (<b>L: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(lust) : lust) + "</span></b>)" : ""));
 		output("\n\nThey scamper off shouting, <i>“You shouldn’t have picked a fight if you didn’t have anything! Weirdo!”</i> until their footfalls fade into the background thrums. Guess that could have gone worse...");
 	}
 	// PC isn't poor
@@ -2238,7 +2238,7 @@ public function ratFightLoss():void
 			output("\n\nWhile two rats heft their take and get ready to go, the rodenian hops up to you with a weird vial in hand. She jabs you in the neck with a blue juice of some sort before you can react. <i>“Don’t worry, it’s a resuscitation stim! You’ll get all turned on but it beats bleeding out!”</i>");
 			output("\n\nYou rub your neck, already feeling better... but also feeling a bit turned on.");
 			output("\n\nSatisfied, delighted, <i>excited</i> beyond belief, the rambunctious rodents release you and bound down the passage, the jingling of their loot - your hard-earned wealth - making the hyper-present scorch of humiliation burn all the more painfully...");
-			//output(" (<b>H: +<span class='hp'>" + heal + "</span></b>)" + (lust > 0 ? " (<b>L: +<span class='lust'>" + lust + "</span></b>)" : ""));
+			//output(" (<b>H: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(heal) : heal) + "</span></b>)" + (lust > 0 ? " (<b>L: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(lust) : lust) + "</span></b>)" : ""));
 		}
 	}
 
@@ -2658,7 +2658,7 @@ public function ratsDoneTeasing():void
 		if (pc.libido() <= 33) output("\n\nYou’ll have to be a bit more careful in the future, then.");
 		else if (pc.libido() <= 66) output("\n\nIt wasn’t <i>entirely</i> unpleasant, and you’re already thinking of how the next encounter could go.");
 		else output("\n\nYou already want to go again! Just getting up again is going to be difficult!");
-		if (pc.HP() <= 0) output("\n\nCuriously, you note that your wounds have healed, likely thanks to your foes. At least you won’t have to worry about bleeding out as you carry on. (<b>H: +<span class='hp'>" + (pc.HPMax() - pc.HP()) + "</span></b>)");
+		if (pc.HP() <= 0) output("\n\nCuriously, you note that your wounds have healed, likely thanks to your foes. At least you won’t have to worry about bleeding out as you carry on. (<b>H: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(pc.HPMax() - pc.HP()) : pc.HPMax() - pc.HP()) + "</span></b>)");
 	}
 	else
 	{
@@ -2678,7 +2678,7 @@ public function ratsDoneTeasing():void
 		if (pc.libido() <= 33) output("\n\nYou’ll have to be more careful next time when teasing those little thieves...");
 		else if (pc.libido() <= 66) output("\n\nDespite what happened, you can’t say it was <i>entirely</i> unpleasant. A good fuck like that is hard to come by...");
 		else output("\n\nEven though you were fucked into unconsciousness, you feel like doing that again is the hottest thing ever, and look forward to another encounter! ...even if it means losing more money.");
-		if (pc.HP() <= 0) output("\n\nCuriously, you note that your wounds have healed for whatever reason. The rats must have jabbed you with something after leaving. At least you’re not going to have to move on while bleeding out... (<b>H: +<span class='hp'>" + (pc.HPMax() - pc.HP()) + "</span></b>)");
+		if (pc.HP() <= 0) output("\n\nCuriously, you note that your wounds have healed for whatever reason. The rats must have jabbed you with something after leaving. At least you’re not going to have to move on while bleeding out... (<b>H: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='hp'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(pc.HPMax() - pc.HP()) : pc.HPMax() - pc.HP()) + "</span></b>)");
 	}
 	
 	if (pc.HP() <= 0) pc.HP(pc.HPMax());

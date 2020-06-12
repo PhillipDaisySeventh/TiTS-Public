@@ -32,9 +32,10 @@ package classes.Engine.Combat
 					//numDisplayed++;
 					//numDigits += Math.log(damageResult.shieldDamage) + 1;
 					
-					tMsg += "S: " + (damageResult.shieldDamage > 0 ? "-" : "+");
+					tMsg += "S: ";
+					if (!kGAMECLASS.gameOptions.fuzzyInterface) tMsg += damageResult.shieldDamage > 0 ? "-" : "+";
 					if (colour) tMsg += "<span class='shield'>";
-					tMsg += Math.abs(Math.round(damageResult.shieldDamage));
+					tMsg += kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(damageResult.shieldDamage) : Math.abs(Math.round(damageResult.shieldDamage));
 					if (colour) tMsg += "</span>";
 					if (damageResult.hpDamage != 0 || (damageResult.lustDamage != 0 || damageResult.lustResisted == true)) tMsg += ", ";
 				}
@@ -43,9 +44,10 @@ package classes.Engine.Combat
 					//numDisplayed++;
 					//numDigits += Math.log(damageResult.hpDamage) + 1;
 					
-					tMsg += "H: " + (damageResult.hpDamage > 0 ? "-" : "+");
+					tMsg += "H: ";
+					if (!kGAMECLASS.gameOptions.fuzzyInterface) tMsg += damageResult.hpDamage > 0 ? "-" : "+";
 					if (colour) tMsg += "<span class='hp'>";
-					tMsg += Math.abs(Math.round(damageResult.hpDamage));
+					tMsg += kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(damageResult.hpDamage) : Math.abs(Math.round(damageResult.hpDamage));
 					if (colour) tMsg += "</span>";
 					if (damageResult.lustDamage != 0 || damageResult.lustResisted == true) tMsg += ", ";
 				}
@@ -54,17 +56,19 @@ package classes.Engine.Combat
 					//numDisplayed++;
 					//numDigits += Math.log(damageResult.lustDamage) + 1;
 					
-					tMsg += "L: " + (damageResult.lustDamage < 0 ? "-" : "+");
+					tMsg += "L: ";
+					if (!kGAMECLASS.gameOptions.fuzzyInterface) tMsg += damageResult.lustDamage < 0 ? "-" : "+";
 					if (colour) tMsg += "<span class='lust'>";
-					tMsg += Math.abs(Math.round(damageResult.lustDamage));
+					tMsg += kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(damageResult.lustDamage) : Math.abs(Math.round(damageResult.lustDamage));
 					if (colour) tMsg += "</span>";
 				}
 				tMsg += "</b>)";
 			}
 			else
 			{
+				const totalDamage:Number = damageResult.shieldDamage + damageResult.hpDamage + damageResult.lustDamage;
 				tMsg += "(<b>";
-				tMsg += Math.round(damageResult.shieldDamage + damageResult.hpDamage + damageResult.lustDamage);
+				tMsg += kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(totalDamage) : Math.round(totalDamage);
 				tMsg += "</b>)";
 			}
 			

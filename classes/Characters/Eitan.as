@@ -145,7 +145,7 @@ package classes.Characters
 			output("\n\n...But despite the obvious physical excitement, Eitan pays it less mind than you do. His stance is unchanged, and his focus is still on you - hell, you stealing glances at his erection is more liable to open you up for an attack.");
 			output("\n\nThat said, though, despite his stalwartness, his mouth keeps curling and his thighs keep not-unintentionally grinding against each other. Eitan is mortal, and he's just as horny as he looks, but his combat training has given him more focus than you had thought. <b>If you keep teasing him, he'll crack eventually!</b>");
 			// Set Eitan's Lust cap to 200
-			output(" (<b>Max L: +<span class='lust'>" + 100 + "</span></b>)");
+			output(" (<b>Max L: " + (kGAMECLASS.gameOptions.fuzzyInterface ? "": "+") + "<span class='lust'>" + (kGAMECLASS.gameOptions.fuzzyInterface ? fuzzDamage(100) : "100") + "</span></b>)");
 			removeStatusEffect("Not Busted");
 		}
 	}
