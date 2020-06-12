@@ -7,7 +7,7 @@ package classes.Engine.Combat
   public function fuzzDamage(damage:Number):String {
     return damage >= 50 ? "++++" :
       damage >= 25 ? "+++" :
-      damage >= 10 ? " ++" :
+      damage >= 10 ? "++" :
       damage >= 5 ? "+" :
       damage > -5 ? "~" :
       damage > -10 ? "-" :
